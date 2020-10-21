@@ -1,0 +1,1 @@
+# eorzeacollection-parser
