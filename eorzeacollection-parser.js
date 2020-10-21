@@ -476,7 +476,8 @@ const getGlamData = async () => {
 	if (process.argv.length > 2) {
 		var myurl = process.argv[2]
 	} else {
-		var myurl = "https://ffxiv.eorzeacollection.com/glamour/47367/oni-princess"
+		//var myurl = "https://ffxiv.eorzeacollection.com/glamour/47367/oni-princess"
+		throw "Missing URL"
 	}
 	console.log("> Loading - " + myurl)
 	try {
