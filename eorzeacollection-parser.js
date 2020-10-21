@@ -742,11 +742,16 @@ const myGlam3 = function (myGlam, myGlamBytes) {
 		}
 	}
 	if (myGlam[0]["offhand_name"] != '') {
+		if(parseInt(myGlamBytes["offhand_name"].split(',')[0].replace(/\s/g, ''))==0){
+			var colortemp = 0
+		}else{
+			var colortemp = parseInt(findColorByName(myGlam[0]["offhand_color"]))
+		}
 		var OffHand = {
 			"Item1": parseInt(myGlamBytes["offhand_name"].split(',')[0].replace(/\s/g, '')),
 			"Item2": parseInt(myGlamBytes["offhand_name"].split(',')[1].replace(/\s/g, '')),
 			"Item3": parseInt(myGlamBytes["offhand_name"].split(',')[2].replace(/\s/g, '')),
-			"Item4": parseInt(findColorByName(myGlam[0]["offhand_color"]))
+			"Item4": colortemp
 		}
 	} else {
 		var OffHand = {
