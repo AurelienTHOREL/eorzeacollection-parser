@@ -3,6 +3,12 @@ const cheerio = require('cheerio');
 const XIVAPI = require('xivapi-js')
 const fs = require('fs')
 
+const xiv = new XIVAPI({
+	private_key: '',
+})
+//const path = "C:\\Users\\Vayhyr\\Documents\\CMTool\\Gearsets\\"
+const path = "/mnt/c/Users/Vayhyr/Documents/CMTool/Gearsets/"
+
 const myColors = [{
 		"key": "0",
 		"color": "Undyed"
@@ -464,12 +470,7 @@ const myColors = [{
 		"color": "Metallic Purple"
 	}
 ]
-const xiv = new XIVAPI({
-	private_key: '',
-})
 
-//const path = "C:\\Users\\Vayhyr\\Documents\\CMTool\\Gearsets\\"
-const path = "/mnt/c/Users/Vayhyr/Documents/CMTool/Gearsets/"
 
 const getGlamData = async () => {
 	if (process.argv.length > 2) {
