@@ -476,7 +476,6 @@ const getGlamData = async () => {
 	if (process.argv.length > 2) {
 		var myurl = process.argv[2]
 	} else {
-		//var myurl = "https://ffxiv.eorzeacollection.com/glamour/47367/oni-princess"
 		throw "Missing URL"
 	}
 	console.log("> Loading - " + myurl)
@@ -571,7 +570,7 @@ function getModelMain(myGlam, myGlamID) {
 };
 
 async function getID(myItem) {
-	return myItemf = Promise.resolve(xiv.search(myItem))
+	return myItemf = Promise.resolve(xiv.search(myItem,{indexes: "Item"}))
 };
 
 async function getBytes(myItem) {
@@ -605,7 +604,7 @@ function DecimalHexTwosComplement(decimal, size) {
 }
 
 function convertBytesEndian(myBytes, size) {
-	console.log("[DEBUG] " + myBytes + "," + size + " -> " + DecimalHexTwosComplement(decimalToHexString(myBytes), size).toString(16).match(/.{1,2}/g).reverse().join(" ").toString(16))
+	//console.log("[DEBUG] " + myBytes + "," + size + " -> " + DecimalHexTwosComplement(decimalToHexString(myBytes), size).toString(16).match(/.{1,2}/g).reverse().join(" ").toString(16))
 	return DecimalHexTwosComplement(decimalToHexString(myBytes), size).toString(16).match(/.{1,2}/g).reverse().join(" ").toString(16);
 }
 
