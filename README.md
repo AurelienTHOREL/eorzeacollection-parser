@@ -15,5 +15,5 @@ npm install
 ## Usage
 
 ```
-nodejs eorzeacollection-parser.js
+nodejs eorzeacollection-parser.js <url>
 ```
