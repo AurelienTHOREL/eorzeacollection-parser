@@ -515,6 +515,7 @@ const getGlamData = async () => {
 			var offhand = $(el).find('.c-gear-slot-offhand');
 			myGlam[_idx]['offhand_name'] = $(offhand).find('.c-gear-slot-item-info-name').text();
 			myGlam[_idx]['offhand_color'] = filterArray($(offhand).find('.c-gear-slot-item-info-color').text().replace(/(\r\n|\n|\r)/gm, "").split(' '));
+
 			if(myGlam[_idx]['offhand_name'] == "" && myGlam[_idx]['mainhand_name'] != ""){
 				myGlam[_idx]['offhand_name'] = myGlam[_idx]['mainhand_name']
 				myGlam[_idx]['offhand_color'] = myGlam[_idx]['mainhand_color']
@@ -570,7 +571,7 @@ function getModelMain(myGlam, myGlamID) {
 };
 
 async function getID(myItem) {
-	return myItemf = Promise.resolve(xiv.search(myItem,{indexes: "Item"}))
+	return myItemf = Promise.resolve(xiv.search(myItem,{indexes: "Item",string_algo: "match"}))
 };
 
 async function getBytes(myItem) {
@@ -783,4 +784,4 @@ function createGearSet(a, b, c, d, e) {
 }
 
 myGlam();
-console.log("Done.")
+console.log("> Done.")
